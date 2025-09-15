@@ -34,7 +34,7 @@ class ActorController extends Controller
             // Validate that required fields are present
             if (!$this->extractionService->validateRequiredFields($extractedData)) {
                 return back()
-                    ->withErrors(['description' => 'Please add first name, last name, and address'])
+                    ->withErrors(['description' => 'Data not found'])
                     ->withInput();
             }
 

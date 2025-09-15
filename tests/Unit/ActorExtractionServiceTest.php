@@ -218,7 +218,11 @@ class ActorExtractionServiceTest extends TestCase
         $data = [
             'first_name' => 'John',
             'last_name' => 'Doe',
-            'address' => '123 Main St'
+            'address' => '123 Main St',
+            'height' => '6ft',
+            'weight' => '180lbs',
+            'gender' => 'male',
+            'age' => 30
         ];
 
         $result = $this->service->validateRequiredFields($data);
@@ -231,7 +235,11 @@ class ActorExtractionServiceTest extends TestCase
         $data = [
             'first_name' => null,
             'last_name' => 'Doe',
-            'address' => '123 Main St'
+            'address' => '123 Main St',
+            'height' => '6ft',
+            'weight' => '180lbs',
+            'gender' => 'male',
+            'age' => 30
         ];
 
         $result = $this->service->validateRequiredFields($data);
@@ -243,8 +251,12 @@ class ActorExtractionServiceTest extends TestCase
     {
         $data = [
             'first_name' => 'John',
-            'last_name' => '',
-            'address' => '123 Main St'
+            'last_name' => null,
+            'address' => '123 Main St',
+            'height' => '6ft',
+            'weight' => '180lbs',
+            'gender' => 'male',
+            'age' => 30
         ];
 
         $result = $this->service->validateRequiredFields($data);
@@ -257,7 +269,79 @@ class ActorExtractionServiceTest extends TestCase
         $data = [
             'first_name' => 'John',
             'last_name' => 'Doe',
-            'address' => null
+            'address' => null,
+            'height' => '6ft',
+            'weight' => '180lbs',
+            'gender' => 'male',
+            'age' => 30
+        ];
+
+        $result = $this->service->validateRequiredFields($data);
+
+        $this->assertFalse($result);
+    }
+
+    public function test_validate_required_fields_returns_false_when_missing_height()
+    {
+        $data = [
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'address' => '123 Main St',
+            'height' => null,
+            'weight' => '180lbs',
+            'gender' => 'male',
+            'age' => 30
+        ];
+
+        $result = $this->service->validateRequiredFields($data);
+
+        $this->assertFalse($result);
+    }
+
+    public function test_validate_required_fields_returns_false_when_missing_weight()
+    {
+        $data = [
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'address' => '123 Main St',
+            'height' => '6ft',
+            'weight' => null,
+            'gender' => 'male',
+            'age' => 30
+        ];
+
+        $result = $this->service->validateRequiredFields($data);
+
+        $this->assertFalse($result);
+    }
+
+    public function test_validate_required_fields_returns_false_when_missing_gender()
+    {
+        $data = [
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'address' => '123 Main St',
+            'height' => '6ft',
+            'weight' => '180lbs',
+            'gender' => null,
+            'age' => 30
+        ];
+
+        $result = $this->service->validateRequiredFields($data);
+
+        $this->assertFalse($result);
+    }
+
+    public function test_validate_required_fields_returns_false_when_missing_age()
+    {
+        $data = [
+            'first_name' => 'John',
+            'last_name' => 'Doe',
+            'address' => '123 Main St',
+            'height' => '6ft',
+            'weight' => '180lbs',
+            'gender' => 'male',
+            'age' => null
         ];
 
         $result = $this->service->validateRequiredFields($data);

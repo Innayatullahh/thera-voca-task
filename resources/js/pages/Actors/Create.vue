@@ -16,7 +16,7 @@
               type="email"
               class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 bg-white"
               :class="{ 'border-red-500': errors.email }"
-              required
+              
             />
             <p v-if="errors.email" class="mt-1 text-sm text-red-600">
               {{ errors.email }}
@@ -35,10 +35,10 @@
               class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 bg-white"
               :class="{ 'border-red-500': errors.description }"
               placeholder="Describe the actor..."
-              required
+              
             ></textarea>
             <p class="mt-2 text-sm text-gray-600">
-              Please enter first name and last name, and also provide address.
+              Please enter first name, last name, address, height, weight, gender, and age.
             </p>
             <p v-if="errors.description" class="mt-1 text-sm text-red-600">
               {{ errors.description }}

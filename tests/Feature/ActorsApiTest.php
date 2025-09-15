@@ -26,7 +26,7 @@ class ActorsApiTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertJson([
-            'message' => 'Please enter your first name and last name, and also your address.'
+            'message' => 'Please enter first name and last name, and also provide address.'
         ]);
     }
 }

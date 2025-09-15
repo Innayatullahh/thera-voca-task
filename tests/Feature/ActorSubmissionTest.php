@@ -100,7 +100,7 @@ class ActorSubmissionTest extends TestCase
 
         $response->assertSessionHasErrors(['description']);
         $response->assertSessionHasErrorsIn('default', [
-            'description' => 'Please add first name, last name, and address'
+            'description' => 'Data not found'
         ]);
         $this->assertDatabaseCount('actors', 0);
     }

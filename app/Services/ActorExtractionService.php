@@ -102,7 +102,11 @@ class ActorExtractionService
         Log::info('extractdata =>' ,  $extractedData);
         return !empty($extractedData['first_name']) && 
             !empty($extractedData['last_name']) && 
-            !empty($extractedData['address']);
+            !empty($extractedData['address']) &&
+            !empty($extractedData['height']) &&
+            !empty($extractedData['weight']) &&
+            !empty($extractedData['gender']) &&
+            !empty($extractedData['age']);
     }
 
     public static function getPromptText(): string

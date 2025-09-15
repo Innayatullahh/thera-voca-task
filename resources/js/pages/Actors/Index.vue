@@ -38,6 +38,9 @@
                   First Name
                 </th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Last Name
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Address
                 </th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -55,6 +58,9 @@
               <tr v-for="actor in actors.data" :key="actor.id" class="hover:bg-gray-50">
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                   {{ actor.first_name || '-' }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  {{ actor.last_name || '-' }}
                 </td>
                 <td class="px-6 py-4 text-sm text-gray-900">
                   <div class="max-w-xs truncate" :title="actor.address">
